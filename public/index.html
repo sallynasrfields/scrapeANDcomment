@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scraping With Mongoose</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* The Modal (background) */
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+    /* Modal Content/Box */
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+    /* The Close Button */
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Note Scraper</h1>
+    <button id="scrape">scrape</button>
+    <button id="articles-saved">Saved Articles</button>
+
+    <h2><i>If you can do this...the homework should be no problem.</i></h2>
+    <div id="articles"></div>
+    <div id="notes"></div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">View and Add Notes</div>
+        <div class="modal-body">
+          <div id="noteholder">
+            <!--saved notes div to be dynamically created in app.js-->
+          </div>
+          <form>
+            <!--input text to be dynamically created in app.js-->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!--save button to be dynamically inserted into this div through app.js-->
+        </div>
+
+      </div>
+
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      //   $(document).on("click", "#article-notes", function () {
+      //   alert("button clicked");
+      //    modal.style.display = "block";
+      // });
+
+      $(document).on("click", ".close", function () {
+        modal.style.display = "none";
+      })
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
